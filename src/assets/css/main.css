@@ -1,0 +1,37 @@
+body {
+    padding-bottom: 250px;
+}
+
+.total-tasks {
+    padding-bottom: 15px;
+    border-bottom: 2px solid #00897b;
+}
+
+.adding-task-panel,
+.editing-task-panel {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+#add-task-field,
+#edit-task-field {
+    width: 90%;
+}
+
+.table-heading,
+.task-date {
+    text-align: center;
+}
+
+.tasks-list {
+    border: 2px solid #00897b;
+}
+
+.table-headings {
+    border-bottom: 2px solid #00897b;
+}
+
+.task-row:hover {
+    background-color: #FFFFFF;
+}

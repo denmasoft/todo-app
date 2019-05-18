@@ -1,0 +1,45 @@
+<div class="container">
+        <h3 class="heading">Organizate</h3>
+        <h5 class="total-tasks">Tienes {{tasksList.length}} tareas</h5>
+        <div class="adding-task-panel input-field">
+            <label for="add-task-field">Nueva Tarea</label>
+            <input type="text" id="add-task-field" ng-model="newTask" required>
+            <button type="button" class="adding-button btn-floating btn-large waves-effect waves-light"  data-ng-click="addNewTask(newTask)">Añadir</button>
+        </div>
+        <table class="tasks-list">
+            <tr class="table-headings teal darken-1 white-text">
+                <th class="table-heading">Borrar</th>
+                <th class="table-heading">Tarea</th>
+                <th class="table-heading">Marcar</th>
+                <th class="table-heading">Hecho/En progreso</th>
+                <th class="table-heading">Editar</th>
+            </tr>
+            <tr class="task-row" ng-repeat="task in tasksList track by $index">
+                <td class="task-date">
+                    <button type="button" class="waves-effect waves-light btn red" data-ng-click="removeTask($index)">Eliminar</button>
+                </td>
+                <td class="task-date">
+                    {{task.taskName}}
+                </td>
+                <td class="task-date">
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" ng-model="task.isDone">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </td>
+                <td class="task-date">
+                    <span class="in-progress-text red-text" ng-show="!task.isDone">En Progreso</span>
+                    <span class="done-text green-text" ng-show="task.isDone">Hecho</span>
+                </td>
+                <td class="task-date">
+                    <button type="button" class="waves-effect waves-light btn blue" data-ng-click="showEdit($index)">Editar</button>
+                </td>
+            </tr>
+        </table>
+        <div class="editing-task-panel input-field" ng-show="isEditPanelVisible">
+            <input type="text" id="edit-task-field" ng-model="currentEditingTaskText">
+            <button type="button" class="save-edit-button btn-floating btn-large waves-effect waves-light blue"  data-ng-click="editTask()">Guardar</button>
+        </div>
+    </div >
