@@ -10,7 +10,7 @@ function Config($interpolateProvider, $routeProvider, $httpProvider,IdleProvider
         $routeProvider.
              when("/",
         {
-            templateUrl: 'views/tasks/list.html',
+            templateUrl: 'app/views/tasks/list.html',
             controller: "tasksListCtrl",
             resolve: {
                     tasksLoader: function(tasksLoader){
