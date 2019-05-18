@@ -12,5 +12,5 @@
         };
     };
     angular.module('todoApp').factory('tasksLoader', tasksLoader);
-    mapLoader.$inject = ['$q', '$task'];
+    tasksLoader.$inject = ['$q', '$task'];
 })();
